@@ -1,0 +1,77 @@
+import { motion, useMotionValue } from 'framer-motion';
+import { useEffect } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { Magnetic } from '../ui/Magnetic';
+
+export function Hero() {
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      mx.set(e.clientX / window.innerWidth);
+      my.set(e.clientY / window.innerHeight);
+    };
+    window.addEventListener('mousemove', onMove);
+    return () => window.removeEventListener('mousemove', onMove);
+  }, [mx, my]);
+
+  return (
+    <section className='relative overflow-hidden pt-28 md:pt-36'>
+      <div className='mx-auto max-w-6xl px-5 pb-10'>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className='text-sm text-white/70'
+        >
+          Фронтенд-разработчик (React + TypeScript)
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.05 }}
+          className='mt-4 text-4xl md:text-6xl font-semibold leading-tight'
+        >
+          <span className='gradient-text'>Делаю современные интерфейсы</span>
+          <br />с акцентом на UX, анимации и чистую архитектуру.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.12 }}
+          className='mt-6 max-w-2xl text-base md:text-lg text-white/70'
+        >
+          Работаю с React и TypeScript: компонентный подход, кастомные хуки,
+          управление состоянием, анимации. Использую Vite, Tailwind и React
+          Router для создания быстрых и масштабируемых интерфейсов.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.18 }}
+          className='mt-10 flex flex-wrap gap-3'
+        >
+          <Magnetic strength={12}>
+            <a
+              href='#projects'
+              className='rounded-2xl bg-white text-black px-5 py-3 text-sm font-medium hover:opacity-90 transition inline-flex items-center gap-2'
+            >
+              Смотреть проекты <ArrowUpRight size={16} />
+            </a>
+          </Magnetic>
+
+          <a
+            href='#contact'
+            className='rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition'
+          >
+            Связаться
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
