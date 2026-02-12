@@ -14,7 +14,7 @@ export function Reveal({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{
         once: false,
-        amount: 0.4,
+        amount: 0.5,
       }}
       transition={{ duration: 0.55, ease: 'easeOut', delay }}
     >
