@@ -51,7 +51,7 @@ export function ProjectsGrid() {
                         className='p-2 rounded-xl hover:bg-white/10'
                         href={p.links.repo}
                         target='_blank'
-                        rel='noreferrer'
+                        rel='noreferrer noopener'
                       >
                         <Github size={18} />
                       </a>
@@ -61,7 +61,7 @@ export function ProjectsGrid() {
                         className='p-2 rounded-xl hover:bg-white/10'
                         href={p.links.demo}
                         target='_blank'
-                        rel='noreferrer'
+                        rel='noreferrer noopener'
                       >
                         <ArrowUpRight size={18} />
                       </a>

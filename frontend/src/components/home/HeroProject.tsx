@@ -49,7 +49,7 @@ export function HeroProject({
             <a
               href={demo}
               target='_blank'
-              rel='noreferrer'
+              rel='noreferrer noopener'
               className='inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-medium text-black hover:opacity-90 transition'
             >
               Демо <ArrowUpRight size={16} />
@@ -65,7 +65,7 @@ export function HeroProject({
             <a
               href={repo}
               target='_blank'
-              rel='noreferrer'
+              rel='noreferrer noopener'
               className='inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-sm text-white hover:bg-white/5 transition'
             >
               <Github size={16} /> Репо

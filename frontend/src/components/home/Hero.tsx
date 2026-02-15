@@ -25,7 +25,7 @@ export function Hero() {
           transition={{ duration: 0.45 }}
           className='text-sm text-white/70'
         >
-          Фронтенд-разработчик (React + TypeScript)
+          Fullstack-разработчик
         </motion.p>
 
         <motion.h1
@@ -34,8 +34,10 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.05 }}
           className='mt-4 text-4xl md:text-6xl font-semibold leading-tight'
         >
-          <span className='gradient-text'>Делаю современные интерфейсы</span>
-          <br />с акцентом на UX, анимации и чистую архитектуру.
+          <span className='gradient-text'>
+            Проектирую и реализую fullstack-приложения
+          </span>
+          <br />с чистой архитектурой и продуманным UX.
         </motion.h1>
 
         <motion.p
@@ -44,9 +46,11 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.12 }}
           className='mt-6 max-w-2xl text-base md:text-lg text-white/70'
         >
-          Работаю с React и TypeScript: компонентный подход, кастомные хуки,
-          управление состоянием, анимации. Использую Vite, Tailwind и React
-          Router для создания быстрых и масштабируемых интерфейсов.
+          Работаю с React и TypeScript на клиенте и FastAPI с PostgreSQL на
+          сервере. Проектирую архитектуру, настраиваю авторизацию, работаю с
+          REST API, WebSocket и Docker. Строю приложения целиком — от базы
+          данных до интерфейса. Основной фокус — структурированная архитектура и
+          чистый код.
         </motion.p>
 
         <motion.div

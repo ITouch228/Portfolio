@@ -18,17 +18,37 @@ export function Reveal({
 
   const inView = useInView(ref, {
     once: true,
-    amount: 0.5,
+    amount: 0.45,
   });
 
   useEffect(() => {
-    if (inView) {
+    if (!inView) return;
+
+    const isRestoring = document.documentElement.hasAttribute(
+      'data-scroll-restoring',
+    );
+    if (!isRestoring) {
       controls.start({
         opacity: 1,
         y: 0,
         transition: { duration: 0.55, ease: 'easeOut', delay },
       });
+      return;
     }
+
+    let raf = 0;
+    const tick = () => {
+      if (!isRestoring) {
+        controls.start({
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.55, ease: 'easeOut', delay },
+        });
+      } else raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(raf);
   }, [inView, controls, delay]);
 
   return (

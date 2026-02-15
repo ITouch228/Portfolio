@@ -58,7 +58,7 @@ export function Contact() {
                 className='text-white hover:underline'
                 href='https://github.com/ITouch228'
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
               >
                 github.com/ITouch228
               </a>
@@ -69,7 +69,7 @@ export function Contact() {
                 className='text-white hover:underline'
                 href='https://t.me/ITouch06'
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
               >
                 @ITouch06
               </a>

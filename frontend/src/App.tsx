@@ -1,33 +1,38 @@
+import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Home from './pages/Home';
-import Project from './pages/Project';
+import { ScrollRestoration } from './components/layout/ScrollRestoration';
 import { Aurora } from './components/layout/Aurora';
 import { ScrollToTop } from './components/ui/ScrollToTop';
-import { useEffect } from 'react';
+
+const Home = lazy(() => import('./pages/Home'));
+const Project = lazy(() => import('./pages/Project'));
 
 export default function App() {
   const location = useLocation();
 
-  useEffect(() => {
-    const titles: Record<string, string> = {
-      '/': 'Данил Яценко — Fullstack-разработчик',
-      '/project/itmessage': 'ITMessage — Мессенджер',
-      '/project/booking-system': 'Система бронирования помещений',
-      '/project/itodo': 'IToDo — Менеджер задач',
-    };
-    document.title =
-      titles[location.pathname] || 'Данил Яценко — Fullstack-разработчик';
-  }, [location.pathname]);
-
   return (
     <>
+      <ScrollRestoration />
       <Aurora />
-      <div className='noise' />
-      <AnimatePresence mode='wait' initial={false}>
+      <AnimatePresence mode='wait' initial={true}>
         <Routes location={location} key={location.pathname}>
-          <Route path='/' element={<Home />} />
-          <Route path='/project/:slug' element={<Project />} />
+          <Route
+            path='/'
+            element={
+              <Suspense fallback={null}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/project/:slug'
+            element={
+              <Suspense fallback={null}>
+                <Project />
+              </Suspense>
+            }
+          />
         </Routes>
       </AnimatePresence>
 
