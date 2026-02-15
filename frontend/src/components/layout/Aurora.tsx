@@ -24,8 +24,8 @@ export function Aurora() {
       style={{
         background:
           'radial-gradient(1100px circle at var(--x) var(--y), rgba(99,102,241,.25), transparent 55%), radial-gradient(900px circle at 15% 15%, rgba(16,185,129,.18), transparent 55%), radial-gradient(900px circle at 85% 85%, rgba(236,72,153,.12), transparent 60%)',
-        ['--x' as any]: x,
-        ['--y' as any]: y,
+        ['--x' as string | number]: x,
+        ['--y' as string | number]: y,
       }}
     />
   );
