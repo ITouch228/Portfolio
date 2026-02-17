@@ -10,9 +10,9 @@ export function ProjectsGrid() {
   return (
     <section id='projects' className='mx-auto max-w-6xl px-5 py-20'>
       <Reveal>
-        <h2 className='text-2xl md:text-3xl font-semibold'>Пет-проекты</h2>
+        <h2 className='text-2xl md:text-3xl font-semibold'>Проекты</h2>
         <p className='mt-3 text-white/65 max-w-2xl'>
-          Отдельные проекты с аккуратным UX, архитектурой и анимациями.
+          Клиент-серверные приложения с продуманной архитектурой, API и деплоем.
         </p>
       </Reveal>
 

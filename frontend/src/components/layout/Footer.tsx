@@ -5,7 +5,7 @@ export function Footer() {
         <div className='flex flex-col md:flex-row gap-2 md:items-center md:justify-between'>
           <span>© {new Date().getFullYear()} itouch.dev</span>
           <span className='text-white/40'>
-            Фронтенд-разработчик • React • TypeScript • Vite
+            Fullstack-разработчик • React • FastAPI • PostgreSQL
           </span>
         </div>
       </div>
